@@ -2,14 +2,26 @@ package com.example.a10648.servicetest;
 
 import android.app.Service;
 import android.content.Intent;
+import android.os.Binder;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
 import android.util.Log;
 
 /**
- * Created by 10648 on 2016/5/26 0026.
+ * Created by lizheng on 2016/5/26 0026.
  */
 public class MyService extends Service {
+    private DownloadBinder mBinder =  new DownloadBinder();
+
+    class  DownloadBinder extends Binder{
+        public void startDownload(){
+            Log.d("MyService", "startDownload  ");
+        }
+        public int getProgress(){
+            Log.d("MyService", "getProgress  ");
+            return 0;
+        }
+    }
     @Override
     public void onCreate() {
         super.onCreate();
@@ -32,6 +44,6 @@ public class MyService extends Service {
     @Nullable
     @Override
     public IBinder onBind(Intent intent) {
-        return null;
+        return mBinder;
     }
 }
