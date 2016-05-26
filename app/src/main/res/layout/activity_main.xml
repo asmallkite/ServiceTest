@@ -9,8 +9,15 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.a10648.servicetest.MainActivity">
 
-    <TextView
+  <Button
+      android:id="@+id/start_service"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="@string/start_service"/>
+    <Button
+        android:id="@+id/end_service"
+        android:layout_below="@id/start_service"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:text="@string/end_service"/>
 </RelativeLayout>
